@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Animation</title>
+</head>
+<body>
+<div id = 'div1'></div>
+
+
+
+
+
+    <script>
+
+ function makeImage(e){
+
+        var evt = window.event ? window.event : e;  // 이벤트 받기 (파폭, IE 처리)
+ 
+        var btn = document.createElement('button');    // 이미지 객채 생성
+        var btext = document.createTextNode('click');
+
+        btn.appendChild(btext);
+        btn.style.position = 'absolute';
+        btn.style.top = evt.clientY + document.body.scrollTop;
+        btn.style.left = evt.clientX + document.body.scrollLeft;
+        document.body.appendChild(btn);
+    }
+    document.onclick = makeImage;
+    </script>
+</body>
+</html>
